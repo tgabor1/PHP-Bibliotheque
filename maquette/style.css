@@ -1,0 +1,420 @@
+html {
+    scroll-behavior: smooth;
+    --color0: rgb(0, 0, 0);
+    --color0b: rgb(240, 248, 255);
+    --color0c: rgba(42, 32, 42, 0.7);
+    --color1: hsla(169, 100%, 21%, 0.3);
+    --color1Over: hsla(169, 100%, 21%, 0.8);
+    --color2: hsla(328, 100%, 21%, 0.3);
+    --color2Over: hsla(328, 100%, 21%, 0.8);
+    --colorBg1: rgba(200, 140, 160, 0.5);
+    --colorBg2: rgba(0, 0, 64, 0.5);
+    --colorM1: hsla(169, 100%, 75%, 0.6);
+    --colorM1Over: hsla(169, 100%, 75%, 0.9);
+    --colorM2: hsla(53, 100%, 75%, 0.6);
+    --colorM2Over: hsla(53, 100%, 75%, 0.9);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color1Over);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-image: linear-gradient(var(--colorBg1), var(--colorBg2)),
+        url("./img/XVMcd251ca0-7b73-11e7-858d-a12c4d61b83c-805x453.webp");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* ****************************************************************/
+/* MENU ***********************************************************/
+nav {
+    background-color: var(--color0c);
+    width: 100%;
+    position: fixed;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li {
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+a {
+    color: var(--colorM1);
+    text-decoration: none;
+    font-size: 1.0em;
+}
+
+a:hover {
+    color: var(--colorM1Over);
+    text-decoration: none;
+    font-size: 1.0em;
+}
+
+#selectedLink {
+    color: var(--colorM2);
+    text-decoration: none;
+    font-size: 1.0em;
+}
+
+#selectedLink:hover {
+    color: var(--colorM2Over);
+    text-decoration: none;
+    font-size: 1.0em;
+}
+
+/* ****************************************************************/
+/* TITRE DE PAGE **************************************************/
+h1 {
+    /* color: aliceblue; */
+    text-shadow: rgba(0, 0, 0, 0.5) 3px 3px;
+    color: rgba(255, 255, 255, 0.75);
+    padding-top: 64px;
+}
+
+/* ****************************************************************/
+/* RECHERCHE ETC **************************************************/
+.pageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.filters {
+    width: 25%;
+    height: 64vh;
+    display: flex;
+    justify-content: center;
+}
+
+.search {
+    background-color: var(--color0c);
+    width: 200px;
+    height: 420px;
+    border-radius: 0.3em;
+    padding-left: 30px;
+    overflow: hidden;
+    position: fixed;
+    color: var(--color0b);
+}
+
+.themeSelector {
+    /* background-color: aqua; */
+    width: 100%;
+    /* height: 32px; */
+    padding-top: 6px;
+    padding-right: 64px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#theme1 {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+    border-style: solid;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+#theme1:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+#theme2 {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(0, 0, 0, 0.3);
+    border-style: solid;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+#theme2:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ****************************************************************/
+/* CATALOGUE ******************************************************/
+.catalogue {
+    width: 66%;
+    max-width: 800px;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+    border-radius: 0.3em;
+}
+
+.ligneCatalogue {
+    background-color: var(--color0c);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ligneCatalogueB {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ****************************************************************/
+/* Header du tableau **********************************************/
+.colonneTitreB {
+    width: 50%;
+    padding: 8px;
+    color: var(--color0b);
+}
+
+.colonneStatusB {
+    width: 16%;
+    padding: 8px;
+    color: var(--color0b);
+}
+
+.colonneEmprunteurB {
+    width: 16%;
+    /* width: 16%; */
+    padding: 8px;
+    color: var(--color0b);
+}
+
+.colonneFicheB {
+    width: 16%;
+    padding: 8px;
+    color: var(--color0b);
+}
+
+/* ****************************************************************/
+/* Cellule dynamique **********************************************/
+.colonneTitre {
+    background-color: hsla(210, 67%, 94%, 0.75);
+    width: 50%;
+    padding: 8px;
+}
+
+.colonneStatus {
+    background-color: hsla(210, 67%, 94%, 0.75);
+    width: 16%;
+    padding: 8px;
+}
+
+.colonneEmprunteur {
+    background-color: hsla(210, 67%, 94%, 0.75);
+    width: 16%;
+    padding: 8px;
+}
+
+.colonneFiche {
+    background-color: hsla(210, 67%, 94%, 0.75);
+    width: 16%;
+    padding: 8px;
+    color: aliceblue;
+}
+
+/* ****************************************************************/
+/* contenu dynamique **********************************************/
+
+.booktitle {
+    margin: 2px;
+}
+
+.booktitle:hover {
+    font-weight: bold;
+}
+
+.selectStatusD {
+    background-color: var(--color1);
+    border-radius: 0.3em;
+    padding: 3px;
+    border-color: rgba(0, 0, 0, 0.3);
+    color: var(--color0b);
+}
+
+.selectStatusD:hover {
+    background-color: var(--color1Over);
+}
+
+.selectStatusP {
+    background-color: var(--color2);
+    border-radius: 0.3em;
+    padding: 3px;
+    border-color: rgba(0, 0, 0, 0.3);
+    color: var(--color0b);
+}
+
+.selectStatusP:hover {
+    background-color: var(--color2Over);
+}
+
+.selectStatusE {
+    background-color: rgba(255, 0, 0, 0.3);
+    border-radius: 0.3em;
+    padding: 3px;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.selectStatusE:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.optDispo {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.optPret {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.inputEmprunteur {
+    background-color: hsla(200, 100%, 97%, 0.3);
+    width: 94%;
+    border-radius: 3px;
+    padding: 3px;
+    border-color: hsla(0, 0%, 0%, 0.3);
+}
+
+.inputEmprunteur:hover {
+    background-color: hsla(200, 100%, 97%, 0.8);
+}
+
+.btnFiche {
+    background-color: hsla(53, 100%, 75%, 0.3);
+    border-radius: 0.3em;
+    padding: 3px;
+    border-color: hsla(0, 0%, 0%, 0.3);
+}
+
+.btnFiche:hover {
+    background-color: hsla(53, 100%, 75%, 0.8);
+    border-color: hsla(53, 100%, 75%, 0.8);
+}
+
+.btnAjouter {
+    background-color: var(--color1);
+    border-radius: 3px;
+    padding: 3px;
+    border-color: rgba(0, 0, 0, 0.3);
+    color: var(--color0b);
+}
+
+.btnAjouter:hover {
+    background-color: var(--color1Over);
+    border-color: var(--color1Over);
+
+}
+
+.btnSupprimer {
+    background-color: var(--color2);
+    border-radius: 0.3em;
+    padding: 3px;
+    border-color: hsla(0, 0%, 0%, 0.3);
+    color: var(--color0b);
+}
+
+.btnSupprimer:hover {
+    background-color: var(--color2Over);
+    border-color: var(--color2Over);
+}
+
+/* ****************************************************************/
+/* FICHE OUVRAGE **************************************************/
+.DetailContainer {
+    display: flex;
+    flex-flow: column;
+}
+
+.labelOuvrage {
+    background-color: var(--color0c);
+    color: var(--color0b);
+    width: 75px;
+    padding: 5px;
+    text-align: right;
+    border-radius: 3px;
+}
+
+.InputOuvrage {
+    width: 256px;
+    padding: 5px;
+    background-color: hsla(200, 100%, 97%, 0.8);
+    border-radius: 3px;
+}
+
+.InputOuvrage:hover {
+    font-weight: bold;
+}
+
+.TextAreaOuvrage {
+    width: 683px;
+    padding: 5px;
+    background-color: hsla(200, 100%, 97%, 0.8);
+    border-radius: 3px;
+}
+
+.TextAreaOuvrage:hover {
+    font-weight: bold;
+}
+
+.my2div {
+    display: flex;
+    flex-flow: row;
+}
+
+/* ****************************************************************/
+/* tableEmprunteur ************************************************/
+.tableThead {
+    background-color: var(--color0c);
+    color: var(--color0b);
+}
+
+.tableTr {
+    background-color: var(--color0b);
+    color: var(--color0);
+}
+
+.tableTd {
+    background-color: rgba(32, 0, 64, 0.1);
+    color: var(--color0);
+}
+
+/* ****************************************************************/
+/* Pagination ************************************************/
+/* .pagination {
+    background-color: aqua;
+    margin: 20px;
+} */
